@@ -1,0 +1,22 @@
+
+/*}*/
+/*.list-left{*/
+/*  list-style: none;*/
+/*}*/
+.active{
+  /*background-color: #F36B08 !important;*/
+  color: #F36B08;
+  /*border-color: #F36B08 !important;*/
+}
+.item-left{
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.item-left a{
+  height: 50px;
+}
+/*.item-left a {*/
+/*  color: black;*/
+/*}*/

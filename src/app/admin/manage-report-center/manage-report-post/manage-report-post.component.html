@@ -1,0 +1,155 @@
+<div class="container-fluid ">
+  <mat-form-field appearance="standard">
+    <mat-label>Tìm kiếm</mat-label>
+    <input #input (keyup)="applyFilter($event)" matInput>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8 ">
+    <table [dataSource]="dataSource" class="w-100" mat-table matSort>
+
+      <ng-container matColumnDef="postID">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Mã bài đăng</th>
+        <td *matCellDef="let row" mat-cell> {{row.postID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Tên Homestay</th>
+        <td *matCellDef="let row" mat-cell> {{row.title}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Chi tiết lý do</th>
+        <td *matCellDef="let row" mat-cell>
+          <p (click)="showMore(row)">
+            <mat-icon>
+              <span>description</span>
+            </mat-icon>
+          </p>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numbersOfReport">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Số lần bị báo cáo</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.totalReport}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="statusPost">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Trạng thái bài đăng</th>
+        <td *matCellDef="let row" [ngSwitch]="row.statusPost" mat-cell>
+          <button #menuTrigger [matMenuTriggerFor]="menu" mat-button disabled="{{row.statusPost==3||row.statusPost==2}}">
+            <div *ngSwitchCase="0" style="color: #B01E68">
+              <div class="d-flex flex-row align-items-center justify-content-center text-center">
+                <mat-icon style="fill: #B01E68">
+                  <span class="material-symbols-outlined">
+                    fiber_manual_record
+                  </span>
+                </mat-icon>
+                <div>
+                  Chưa thanh toán
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="1" style="color: #367E18">
+              <div class="d-flex flex-row align-items-center justify-content-center text-center">
+                <mat-icon style="fill: #367E18">
+                  <span class="material-symbols-outlined">
+                    fiber_manual_record
+                  </span>
+                </mat-icon>
+                <div>
+                  Hoạt động
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="2" class="d-flex" style="color: #367E18">
+              <div class="d-flex flex-row align-items-center justify-content-center text-center">
+                <mat-icon style="fill: #367E18">
+                   <span class="material-symbols-outlined">
+                      fiber_manual_record
+                   </span>
+                </mat-icon>
+                <div>Bị ẩn bở chủ nhà</div>
+              </div>
+            </div>
+            <div *ngSwitchCase="2" class="d-flex" style="color: #367E18">
+              <div  class="d-flex flex-row align-items-center justify-content-center">
+                  <mat-icon style="fill: #367E18">
+                      fiber_manual_record
+                  </mat-icon>
+                  Đã bị chủ nhà ẩn
+              </div>
+            </div>
+            <div *ngSwitchCase="3" class="d-flex" style="color: #CC3636">
+              <div class="d-flex flex-row align-items-center justify-content-center text-center">
+                <mat-icon>
+                  <span class="material-symbols-outlined">
+                    fiber_manual_record
+                  </span>
+                </mat-icon>
+                <div>
+                  Đã bị người quản trị ẩn
+                </div>
+              </div>
+            </div>
+          </button>
+            <mat-menu #menu="matMenu">
+              <button *ngIf="row.statusPost==1"  (click)="updateStatus(1,row.postID,2,3)" mat-menu-item>
+                Ẩn bài viết
+              </button>
+              <button *ngIf="row.statusPost==3"  (click)="updateStatus(1,row.postID,2,3)" mat-menu-item>
+                Hiển thị bài viết
+              </button>
+            </mat-menu>
+
+        </td>
+      </ng-container>
+        <ng-container matColumnDef="statusReportPost">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Trạng thái báo cáo</th>
+          <td *matCellDef="let row" [ngSwitch]="row.statusReportPost" mat-cell>
+              <div *ngSwitchCase="1" style="color: #F36B08">
+                <div class="d-flex flex-row align-items-start justify-content-start text-start">
+                  <mat-icon style="fill: #F36B08">
+                  <span class="material-symbols-outlined">
+                    fiber_manual_record
+                  </span>
+                  </mat-icon>
+                  <div>
+                    Chưa xử lý
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="2" class="d-flex" style="color: #367E18">
+                <div class="d-flex flex-row align-items-center justify-content-center text-center">
+                  <mat-icon style="fill: #367E18">
+                   <span class="material-symbols-outlined">
+                      fiber_manual_record
+                   </span>
+                  </mat-icon>
+                  <div>Đã xử lý</div>
+                </div>
+              </div>
+<!--            <mat-menu #menu="matMenu">-->
+<!--              <button (click)="openDialog(row.postID,3)" *ngIf="row.statusPost==2||row.statusPost == 0" mat-menu-item>-->
+<!--                Bỏ qua bởi admin-->
+<!--              </button>-->
+<!--              <button (click)="openDialog(row.postID,4)" *ngIf="row.statusPost==1||row.statusPost == 0" mat-menu-item>-->
+<!--                Đã ẩn bởi admin-->
+<!--              </button>-->
+<!--            </mat-menu>-->
+          </td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+      <tr *matNoDataRow class="mat-row">
+        <td class="mat-cell" colspan="4">Không có dữ liệu trùng khớp "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator (page)="handlePageEvent($event)" [hidePageSize]="true" [length]="totalPaginator" [pageSize]="10"
+                   aria-label="Select page of users"></mat-paginator>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<mat-drawer-container autosize class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <mat-list class="d-flex text-center flex-column justify-content-center">
+      <mat-list-item class="left-bar-list" routerLink="/admin/manager-account/manager-account-host"
+                     routerLinkActive="active">
+        <mat-icon class="me-2">account_circle</mat-icon>
+        Quản lý tài khoản
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="left-bar-list" routerLink="/admin/manage-post" routerLinkActive="active">
+        <mat-icon class="me-2">feed</mat-icon>
+        Quản lý bài đăng
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-list-item class="left-bar-list">
+        <mat-icon class="me-2">payments</mat-icon>
+        Thanh toán
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="left-bar-list" routerLink="/admin/manage-report/manage-report-post" routerLinkActive="active">
+        <mat-icon class="me-2">flag</mat-icon>
+        Xử lý báo cáo
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="left-bar-list" routerLinkActive="active">
+        <mat-icon class="me-2">bar_chart</mat-icon>
+        Thống kê
+      </mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+svg,
+img {
+  width: 100%;
+  height: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr, ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+.card_function {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+}
+
+.card_function button {
+  border: none;
+  background-color: #FAC29A;
+  border-radius: 40px;
+  padding: 10px 10px;
+}
+
+.card_function button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card_statusReport button{
+  border: none;
+  background-color: #FFFFFF;
+}
+
+
+.card_statusReport {
+  text-align: center;
+}
+
+
+.card_statusReport svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+.card_function button:hover {
+  background-color: #F4B689;
+}
+
+.message_box button svg {
+  width: 40px;
+  height: 40px;
+}
+
+.container_manage_post .function_btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.container_manage_post .function_btn .btn_new_post button{
+  border: none;
+  font-family: Baloo;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.container_manage_post .function_btn .btn_new_post button svg{
+  width: 45px;
+  height: 45px;
+}
+
+.card_status span{
+  padding: 10px 15px 10px 15px;
+  border-radius: 20px;
+}
+
+.card_status svg{
+  width: 15px;
+  height: 15px;
+}
+
+.card_endDate span{
+  border: 1px solid #F36B08;
+  padding: 10px 15px 10px 15px;
+  border-radius: 20px;
+  color: #F36B08;
+}
+::ng-deep .mat-sort-header-container {
+  display:flex;
+  justify-content:center;
+}
+
+.hs-name:hover{
+  cursor: pointer;
+  color: #F36B08;
+}

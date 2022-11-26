@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <mat-form-field appearance="standard">
+    <mat-label>Tìm kiếm</mat-label>
+    <input matInput placeholder="">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table [dataSource]="dataSource" class="w-100" mat-table matSort>
+
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> ID</th>
+        <td *matCellDef="let row" mat-cell>{{row.viewBookingDto.bookingID}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Tên Homestay</th>
+        <td *matCellDef="let row" mat-cell>{{row.viewBookingDto.title}}</td>
+      </ng-container>
+      <ng-container matColumnDef="userBooking">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Người đặt</th>
+        <td *matCellDef="let row" mat-cell>{{row.userBookingDto.fullName}}</td>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Ngày thuê phòng</th>
+        <td *matCellDef="let row" mat-cell>{{row.viewBookingDto.startDate}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="endDate">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Ngày trả phòng</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.viewBookingDto.endDate}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="totalPerson">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Tổng số khách</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.viewBookingDto.totalPerson}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="totalMoney">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Tổng thanh toán</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.viewBookingDto.totalMoney}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="totalService">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Tổng phí dịch vụ</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.viewBookingDto.totalService}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="note">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Ghi chú</th>
+        <td *matCellDef="let row" mat-cell>
+          {{row.viewBookingDto.note}}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Xác nhận trả phòng</th>
+        <td *matCellDef="let row" mat-cell>
+            <button class="btn-confirm d-flex justify-content-center" type="button" (click)="confirmReturnHS(row.viewBookingDto.bookingID)">
+              <div class="d-flex justify-content-center align-items-center p-2">
+                <div style="color: #367E18">Xác nhận</div>
+                <div>
+                  <mat-icon style="color: #367E18">check</mat-icon>
+                </div>
+              </div>
+            </button>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+    </table>
+
+    <mat-paginator aria-label="Select page of users" hidePageSize></mat-paginator>
+  </div>
+
+</div>

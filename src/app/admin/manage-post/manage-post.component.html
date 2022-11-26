@@ -1,0 +1,128 @@
+<div class="container-fluid">
+  <h1 class="mt-5" style="font-size: 40px">Quản lý bài đăng</h1>
+  <mat-form-field appearance="standard">
+    <mat-label>Tìm kiếm</mat-label>
+    <input #input (keyup)="applyFilter($event)" matInput placeholder="">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table class="w-100" [dataSource]="dataSource" mat-table matSort>
+
+      <ng-container matColumnDef="postID">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Mã bài đăng</th>
+        <td *matCellDef="let row" mat-cell> {{row.postID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Tên bài đăng</th>
+        <td class="td-title-post" *matCellDef="let row" mat-cell  (click)="navigateToPost(row.postID)"> {{row.title}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="datePayment">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Ngày gia hạn - Ngày hết hạn</th>
+        <td *matCellDef="let row" mat-cell>
+          <ng-template [ngIf]="row.startDate&&row.endDate">
+            Từ {{row.startDate}} đến {{row.endDate}}
+          </ng-template>
+          <ng-template [ngIf]="!row.startDate||!row.endDate">
+            Chưa gia hạn
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="statusPost">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Trạng thái bài đăng</th>
+        <td *matCellDef="let row"  [ngSwitch]="row.statusPost" mat-cell>
+          <div *ngSwitchCase="0" class="d-flex" style="color: #367E18">
+            <div><p>Đang hoạt động</p></div>
+            <div>
+              <mat-icon>
+              <span class="material-symbols-outlined">
+                  fiber_manual_record
+              </span>
+              </mat-icon>
+            </div>
+          </div>
+          <div *ngSwitchCase="1" class="d-flex" style="color: gray">
+            <div><p>Đã bị ẩn</p></div>
+            <div>
+              <mat-icon>
+              <span class="material-symbols-outlined">
+                  fiber_manual_record
+              </span>
+              </mat-icon>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="statusPostPayment">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Trạng thái</th>
+        <td *matCellDef="let row" [ngSwitch]="row.statusPostPayment" mat-cell>
+
+          <div *ngSwitchCase="0" class="d-flex" style="color: #F36B08">
+            <div><p>Chưa trả phí đăng bài</p></div>
+<!--            <div>-->
+<!--              <mat-icon>-->
+<!--              <span class="material-symbols-outlined">-->
+<!--                  fiber_manual_record-->
+<!--              </span>-->
+<!--              </mat-icon>-->
+<!--            </div>-->
+          </div>
+
+          <div *ngSwitchCase="1" class="d-flex" style="color: #367E18">
+            <div><p> Đã kích hoạt</p></div>
+<!--            <div>-->
+<!--              <mat-icon >-->
+<!--              <span class="material-symbols-outlined">-->
+<!--                  fiber_manual_record-->
+<!--              </span>-->
+<!--              </mat-icon>-->
+<!--            </div>-->
+          </div>
+
+          <div *ngSwitchCase="2" class="d-flex" style="color: #F36B08">
+            <div><p> Tạm dừng</p></div>
+<!--            <div>-->
+<!--              <mat-icon >-->
+<!--              <span class="material-symbols-outlined">-->
+<!--                  fiber_manual_record-->
+<!--              </span>-->
+<!--              </mat-icon>-->
+<!--            </div>-->
+          </div>
+
+          <div *ngSwitchCase="3" class="d-flex" style="color: red">
+            <div><p>Đã bị khoá</p></div>
+<!--            <div>-->
+<!--              <mat-icon >-->
+<!--              <span class="material-symbols-outlined">-->
+<!--                  fiber_manual_record-->
+<!--              </span>-->
+<!--              </mat-icon>-->
+<!--            </div>-->
+          </div>
+
+
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Ngày tham gia</th>
+        <td *matCellDef="let row" mat-cell> {{row.dob}} </td>
+      </ng-container>
+
+
+      <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+      <tr *matNoDataRow class="mat-row">
+        <td class="mat-cell" colspan="4">Không có dữ liệu trùng khớp "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [hidePageSize]="true" [pageSize]="10" [length]="totalPaginator" aria-label="Select page of users"></mat-paginator>
+  </div>
+
+</div>

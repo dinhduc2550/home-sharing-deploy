@@ -1,0 +1,89 @@
+
+  <div class="container-fluid w-100">
+    <div class="function_btn">
+      <div class="btn_new_voucher">
+        <button (click)="onOpenCreateVoucher()" style="background-color: #fafafa;">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="30" fill="#F36B08" fill-opacity="0.41"/>
+            <path d="M30.666 20V38.6364" stroke="#F36B08" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <path d="M20.8887 29.3184H40.4442" stroke="#F36B08" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+          Thêm khuyến mãi mới
+        </button>
+      </div>
+      <div class="btn_search" style="justify-self: end;">
+        <mat-form-field appearance="standard">
+          <mat-label>Tìm kiếm</mat-label>
+          <input #input (keyup)="applyFilter($event)" matInput placeholder="">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="mat-elevation-z8">
+      <table class="w-100" [dataSource]="dataSource" mat-table matSort>
+
+        <ng-container matColumnDef="id">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> ID</th>
+          <td  *matCellDef="let row" mat-cell>
+            <div class="d-flex text-center">{{row.idVoucher}}</div></td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Tên khuyến mãi</th>
+          <td *matCellDef="let row" mat-cell>{{row.nameVoucher}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="percent">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Phần trăm giảm</th>
+          <td *matCellDef="let row" mat-cell>{{row.percent}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Nội dung</th>
+          <td *matCellDef="let row" mat-cell>{{row.description}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Thời gian</th>
+          <td *matCellDef="let row" mat-cell>{{row.dueDate}} ngày</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th *matHeaderCellDef mat-header-cell mat-sort-header> Trạng thái</th>
+          <td *matCellDef="let row" mat-cell [ngSwitch]="row.status">
+
+            <button mat-button [matMenuTriggerFor]="menu" #menuTrigger>
+              <div  *ngSwitchCase="1" class="d-flex justify-content-start text-center align-items-center" style="color: #367E18">
+                <mat-icon >fiber_manual_record</mat-icon>
+                Hoạt động
+              </div>
+              <div *ngSwitchCase="2" class="d-flex justify-content-start text-center align-items-center" style="color: #F57328">
+                <mat-icon >fiber_manual_record</mat-icon>
+                Tạm dừng
+              </div>
+              <div *ngSwitchCase="3" class="d-flex justify-content-start text-center align-items-center" style="color: #CC3636" >
+                <mat-icon >fiber_manual_record</mat-icon>
+                Dừng
+              </div>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button  mat-menu-item (click)="openDialog(1,row.idVoucher)">Hoạt động</button>
+              <button   mat-menu-item (click)="openDialog(2,row.idVoucher)">Tạm dừng</button>
+              <button   mat-menu-item (click)="openDialog(3,row.idVoucher)">Dừng</button>
+
+            </mat-menu>
+
+          </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+      </table>
+
+      <mat-paginator hidePageSize aria-label="Select page of users"></mat-paginator>
+    </div>
+
+  </div>
+
