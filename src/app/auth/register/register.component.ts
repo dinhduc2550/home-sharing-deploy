@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
-import {RegisterResponse, RegisterService} from "./register.service";
+import {RegisterResponse} from "./register.service";
 import {Router} from "@angular/router";
 import {Observable, timer} from "rxjs";
 import {map, switchMap} from "rxjs/operators";

@@ -1,8 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {UserInfo} from "../../../profile/profile.model";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {ProfileService} from "../../../profile/profile.service";
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {AccountHost} from "../../../shared/model/account-host.model";
 import {AccountDetailServices} from "./account-detail.services";
 

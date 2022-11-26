@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PostService} from "../post.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
-import {Post, ResponsePost} from "../post.model";
 import {DataStorageService} from "../../shared/data-storage.service";
 import {PostDetailService} from "./post-detail.service";
 import {Rate, RateResponse} from "../../shared/model/rate.model";

@@ -2,16 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ComplaintReportComponent} from "../complaint-report/complaint-report.component";
 import {MatTableDataSource} from "@angular/material/table";
-import {CustomerDetail} from "../../shared/model/account-customer.model";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {PostDetail} from "../../shared/model/post-list-host.model";
 import {map, switchMap} from "rxjs/operators";
 import {HostPostListServices} from "./host-post-list-services";
-import {ListReportPost} from "../../shared/model/report-post.model";
 import {Router} from "@angular/router";
 import {ConfirmDialogComponent} from "../../shared/dialog/confirm-dialog/confirm-dialog.component";
 import {PostVoucherDialogComponent} from "./post-voucher-dialog/post-voucher-dialog.component";
-import {VoucherComponent} from "../../voucher/voucher.component";
 import {Voucher} from "../../shared/model/voucher.model";
 
 @Component({

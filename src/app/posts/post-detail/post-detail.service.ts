@@ -1,17 +1,14 @@
 import {Injectable} from "@angular/core";
-import {Post} from "../post.model";
 import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {RateResponse} from "../../shared/model/rate.model";
 import {
   API_FAVORITE_POST,
-  API_FOLLOW_HOST, API_LIKE_RATE,
+  API_FOLLOW_HOST,
+  API_LIKE_RATE,
   API_POST_DETAIL,
-  API_RATE,
-  API_RATE_BY_POST_ID,
-  API_UTILITYS
+  API_RATE_BY_POST_ID
 } from "../../constant/api.constant";
-import {UtilitiesResponse} from "../../shared/model/utility.model";
 import {PostDetail, ResponsePostDetail} from "./post-detail.model";
 import {ResponseFollow} from "../../shared/model/follow-host.model";
 import {catchError, tap} from "rxjs/operators";

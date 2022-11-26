@@ -4,7 +4,6 @@ import {CustomerDetail} from "../../shared/model/account-customer.model";
 import {ManagerAccountCustomerServices} from "./manager-account-customer.services";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {map, switchMap} from "rxjs/operators";
-import {AccountDetailComponent} from "../manager-account/account-detail/account-detail.component";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {DetailAccountCustomerComponent} from "./detail-account-customer/detail-account-customer.component";
 

@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {ReportRateResponse} from "./manage-report-rate.model";
 import {API_ADMIN_MANAGE_REPORT_RATE, API_ADMIN_UPDATE_STATUS_REPORT_RATE} from "../../../constant/api.constant";
 import {Injectable} from "@angular/core";
+
 @Injectable({providedIn:'root'})
 export class ManageReportRateService{
   constructor(private http:HttpClient) {

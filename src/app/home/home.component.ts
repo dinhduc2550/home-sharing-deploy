@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {AuthService} from "../auth/auth.service";
 import {HomeService} from "./home.service";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {RecommendedPlace, RecommendedPlaceResponse} from "../shared/model/RecommendedPlace.model";
 import {InterestingPlace, InterestingPlaceResponse} from "../shared/model/InterestingPlace.model";
 import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";

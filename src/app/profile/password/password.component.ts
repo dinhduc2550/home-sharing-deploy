@@ -3,10 +3,8 @@ import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validat
 import {AuthService} from "../../auth/auth.service";
 import {ErrorStateMatcher} from "@angular/material/core";
 import {PasswordService} from "./password.service";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
-import {catchError, tap} from "rxjs/operators";
-import {MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import {Observable} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-password',

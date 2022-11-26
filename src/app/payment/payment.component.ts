@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PaymentService} from "./payment.service";
 import {ActivatedRoute} from "@angular/router";
 

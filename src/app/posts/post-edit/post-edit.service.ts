@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {ResponseDistrict, ResponseProvince} from "../../shared/model/district.model";
 import {
-  API_DISTRICT, API_DOWNLOAD_IMG,
+  API_DISTRICT,
+  API_DOWNLOAD_IMG,
   API_GET_DISTRICT_BY_PROVINCE,
   API_MAP_GEO,
   API_POSTING,
@@ -11,9 +12,11 @@ import {
   API_PUSH_IMG_POST,
   API_PUSH_SINGLE_IMG_POST,
   API_ROOM_TYPE,
-  API_SERVICE_POST, API_UPDATE_IMG_POST, API_UPDATE_POSTING,
+  API_SERVICE_POST,
+  API_UPDATE_IMG_POST,
+  API_UPDATE_POSTING,
   API_UTILITYS,
-  API_VOUCHER, API_VOUCHER_HOST
+  API_VOUCHER_HOST
 } from "../../constant/api.constant";
 import {catchError, map, tap} from "rxjs/operators";
 import {ResponseRoom} from "../../shared/model/room-type.model";
@@ -24,7 +27,6 @@ import {environment} from "../../../environments/environment.prod";
 import {VoucherResponse} from "../../shared/model/voucher.model";
 import {ResponseService} from "../../shared/model/serivce-post.model";
 import {ImgEditResponse} from "./img-edit.model";
-import {File} from "@angular/compiler-cli/src/ngtsc/file_system/testing/src/mock_file_system";
 
 @Injectable({
   providedIn: 'root'

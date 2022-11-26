@@ -1,15 +1,9 @@
-import {Component, ElementRef, Injectable, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {MatMenuTrigger} from "@angular/material/menu";
-import {COMMA, ENTER} from "@angular/cdk/keycodes";
-import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
-import {MatChipInputEvent} from "@angular/material/chips";
-import {map, shareReplay, startWith, switchMap} from "rxjs/operators";
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {PostService} from "./post.service";
 import {environment} from "../../environments/environment.prod";
 import * as mapboxgl from 'mapbox-gl'
 import {API_MAP_GEO} from "../constant/api.constant";
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',

@@ -6,6 +6,7 @@ import {debounceTime, distinctUntilChanged, switchMap} from "rxjs/operators";
 import {HeaderService} from "./header.service";
 import {ListPostSearched, ListProvinceSearched, SearchResponse} from "../shared/model/search.model";
 import {Router} from "@angular/router";
+
 declare var $: any;
 
 @Component({

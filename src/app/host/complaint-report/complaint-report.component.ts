@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ComplaintReportServices} from "./complaint-report.services";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
-import {content, Data, IResponseReportPost} from "../../shared/model/report-post.model";
+import {content, Data} from "../../shared/model/report-post.model";
 import {map, switchMap} from "rxjs/operators";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {PostDetail} from "../../shared/model/post-list-host.model";

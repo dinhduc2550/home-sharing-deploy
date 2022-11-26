@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {CustomerDetail} from "../../../shared/model/account-customer.model";
 import {ListBooking} from "../list-confirm-booking/list-confirm-booking.model";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {ListConfirmBookingService} from "../list-confirm-booking/list-confirm-booking.service";

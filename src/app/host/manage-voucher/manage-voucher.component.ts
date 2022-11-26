@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {CreateVoucherComponent} from "../create-voucher/create-voucher.component";
 import {MatTableDataSource} from "@angular/material/table";
-import {CustomerDetail} from "../../shared/model/account-customer.model";
 import {ManageVoucherServices} from "./manage-voucher.services";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {VoucherDetail} from "../../shared/model/voucher-host.model";

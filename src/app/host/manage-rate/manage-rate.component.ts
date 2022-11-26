@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {ListPostRate} from "./manage-rate.model";
 import {ManageRateService} from "./manage-rate.service";

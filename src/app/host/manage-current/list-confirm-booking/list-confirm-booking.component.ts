@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
-import {CustomerDetail} from "../../../shared/model/account-customer.model";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
-import {ListBooking, ListConfirmBookingData, ListConfirmBookingResponse} from "./list-confirm-booking.model";
+import {ListBooking} from "./list-confirm-booking.model";
 import {ListConfirmBookingService} from "./list-confirm-booking.service";
 import {map, switchMap} from "rxjs/operators";
 

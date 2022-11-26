@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RateDetailService} from "./rate-detail.service";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {DetailRateDtoList, PostDetailOfRate, RateDetailResponseData} from "./rate-detail.model";

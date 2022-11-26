@@ -38,7 +38,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import {ProfileComponent} from './profile/profile.component';
 import {MatMenuModule} from "@angular/material/menu";
-import {NgbAlertModule, NgbPaginationModule, NgbModule, NgbCarouselConfig, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbAlertModule, NgbModule, NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatListModule} from "@angular/material/list";
 import {ErrorPageComponent} from './error-page/error-page.component';
@@ -113,13 +113,15 @@ import {
   HandleStatusVoucherComponent
 } from './host/manage-voucher/handle-status-voucher/handle-status-voucher.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
-import { HandleStatusDialogComponent } from './admin/manage-report-center/manage-report-post/handle-status-dialog/handle-status-dialog.component';
-import { ConfirmDialogComponent } from './shared/dialog/confirm-dialog/confirm-dialog.component';
-import { PaymentComponent } from './payment/payment.component';
-import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import {
+  HandleStatusDialogComponent
+} from './admin/manage-report-center/manage-report-post/handle-status-dialog/handle-status-dialog.component';
+import {ConfirmDialogComponent} from './shared/dialog/confirm-dialog/confirm-dialog.component';
+import {PaymentComponent} from './payment/payment.component';
+import {PaymentSuccessComponent} from './payment-success/payment-success.component';
 import {PostVoucherDialogComponent} from "./host/host-post-list/post-voucher-dialog/post-voucher-dialog.component";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
-import { CheckInputNumberDirective } from './shared/directive/check-input-number.directive';
+import {CheckInputNumberDirective} from './shared/directive/check-input-number.directive';
 
 @NgModule({
   declarations: [

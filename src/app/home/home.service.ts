@@ -8,7 +8,7 @@ import {
 } from "../constant/api.constant";
 import {InterestingPlaceResponse} from "../shared/model/InterestingPlace.model";
 import {RecommendedPlaceResponse} from "../shared/model/RecommendedPlace.model";
-import {PostTopRate, ResponsePostTopRate} from "../shared/model/PostYopRate.model";
+import {ResponsePostTopRate} from "../shared/model/PostYopRate.model";
 
 @Injectable({providedIn: 'root'})
 export class HomeService {

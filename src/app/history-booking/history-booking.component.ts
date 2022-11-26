@@ -1,9 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {Component, OnInit} from '@angular/core';
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {RateComponent} from "../rate/rate.component";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ReportHsComponent} from "../report-hs/report-hs.component";
-import {auto} from "@popperjs/core";
 import {HistoryDetail, ResponseHistory} from "./history_booking.model";
 import {HistoryBookingService} from "./history-booking.service";
 

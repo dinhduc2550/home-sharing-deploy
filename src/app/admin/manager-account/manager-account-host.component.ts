@@ -2,12 +2,11 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
-import {AccountHost, IResponseAccount} from "../../shared/model/account-host.model";
+import {AccountHost} from "../../shared/model/account-host.model";
 import {ManagerAccountHostServices} from "./manager-account-host.services";
-import {BehaviorSubject, Observable, Subject, Subscription} from "rxjs";
+import {BehaviorSubject, Observable, Subscription} from "rxjs";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {AccountDetailComponent} from "./account-detail/account-detail.component";
-import {auto} from "@popperjs/core";
 import {map, switchMap} from "rxjs/operators";
 
 @Component({

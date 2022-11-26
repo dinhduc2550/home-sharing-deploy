@@ -1,8 +1,8 @@
 import {API_PUSH_SINGLE_IMG_POST} from "../constant/api.constant";
-import {HttpClient, HttpEvent, HttpHeaders, HttpRequest} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
-import {H} from "@angular/cdk/keycodes";
+
 @Injectable({providedIn:'root'})
 export class TestService{
   private baseUrl = API_PUSH_SINGLE_IMG_POST+3;

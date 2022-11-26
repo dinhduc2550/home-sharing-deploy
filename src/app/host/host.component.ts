@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {CheckOutBookingComponent} from "./check-out-booking/check-out-booking.component";
 import {CurrentBookingDetailComponent} from "./current-booking-detail/current-booking-detail.component";

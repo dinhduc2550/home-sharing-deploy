@@ -3,7 +3,6 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {CustomerDetail} from "../../../shared/model/account-customer.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {DetailAccountCustomerService} from "./detail-account-customer.service";
-import {UserInfo} from "../../../profile/profile.model";
 import {AccountDetailServices} from "../../manager-account/account-detail/account-detail.services";
 
 @Component({

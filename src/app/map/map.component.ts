@@ -1,25 +1,10 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output, SimpleChanges,
-  ViewChild
-} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {environment} from "../../environments/environment.prod";
-import {API_MAP_GEO} from "../constant/api.constant";
-import {HttpClient, HttpRequest} from "@angular/common/http";
 import * as Mapboxgl from 'mapbox-gl'
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import {MapService} from "./map.service";
-import {catchError, debounceTime} from "rxjs/operators";
-import {ResponseCoordinateInfo} from "../shared/model/location.model";
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import {PostService} from "../posts/post.service";
-import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-map',
@@ -91,7 +76,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         this.getLocation()
       })
     }catch (e) {
-     
+
    }
   }
 

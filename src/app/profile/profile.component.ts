@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {ProfileService} from "./profile.service";
-import {UserInfo, UserInfoResponse} from "./profile.model";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-profile',

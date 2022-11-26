@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {catchError, tap} from "rxjs/operators";
 import {BehaviorSubject, Observable, of, throwError} from "rxjs";
 import {User} from "./user.model";
-import {Injectable, OnDestroy} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {FormGroup} from "@angular/forms";
 import {CheckUserNameResponse, RegisterResponse} from "./register/register.service";
 import * as API_CONSTANT from "../constant/api.constant"

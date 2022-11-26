@@ -1,9 +1,8 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {PostEditService} from "../posts/post-edit/post-edit.service";
 import {ServiceObj} from "../shared/model/serivce-post.model";
 import {RoomType} from "../shared/model/room-type.model";
-import {MatCheckboxChange} from "@angular/material/checkbox";
 import {DatePipe} from "@angular/common";
 
 declare var $: any;
